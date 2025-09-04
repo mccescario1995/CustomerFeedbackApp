@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
+  compatibilityDate: "2024-07-15",
   devtools: { enabled: true },
   modules: ["@nuxt/ui", "@sidebase/nuxt-auth"],
 
@@ -33,19 +33,19 @@ export default defineNuxtConfig({
       },
       endpoints: {
         signIn: {
-          path: "http://localhost:5000/api/auth/login",
+          path: "http://localhost:5243/api/auth/login",
           method: "post",
         },
         signUp: {
-          path: "http://localhost:5000/api/auth/register",
+          path: "http://localhost:5243/api/auth/register",
           methods: "post",
         },
         signOut: {
-          path: "http://localhost:5000/api/auth/logout",
+          path: "http://localhost:5243/api/auth/logout",
           method: "post",
         },
         getSession: {
-          path: "http://localhost:5000/api/auth/session",
+          path: "http://localhost:5243/api/auth/session",
           method: "get",
         },
       },
@@ -54,5 +54,8 @@ export default defineNuxtConfig({
       },
     },
     // globalAppMiddleware: true
+  },
+  imports: {
+    dirs: ["layouts", "types"],
   },
 });
